@@ -87,7 +87,7 @@ export default function Upload() {
           >
             {({ isSubmitting, setFieldValue }) => (
               <Form>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl -mt-40">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl -mt-10">
                   <div className="card-body">
                     <div class="grid md:grid-cols-2 md:gap-6">
                       {/* product title */}
