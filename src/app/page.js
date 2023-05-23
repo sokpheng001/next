@@ -8,7 +8,7 @@ export const getDataProduct = async () => {
     `https://api.escuelajs.co/api/v1/products?limit=20&offset=0`,
     {
       method: "GET",
-      cache: "no-store",
+      cache
     }
   ).catch((e) => {
     throw new Error(e);
