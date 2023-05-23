@@ -9,7 +9,7 @@ export const getDataProduct = async () => {
     {
       method: "GET",
       // cache:'no-store'
-    next:{revalidate:5}
+    next:{revalidate:0}
     }
   ).catch((e) => {
     throw new Error(e);
@@ -28,7 +28,7 @@ export const getUser = async () => {
   const get = await fetch(`https://api.escuelajs.co/api/v1/users?limit=8`, {
     method: "GET",
     // cache:"no-store"
-    next: { revalidate: 5 },
+    next: { revalidate: 0 },
   }).catch((e) => {
     throw new Error(e);
   });
