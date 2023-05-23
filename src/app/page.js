@@ -8,7 +8,7 @@ export const getDataProduct = async () => {
     `https://api.escuelajs.co/api/v1/products?limit=20&offset=0`,
     {
       method: "GET",
-      cache
+      // cache:'no-store'
     }
   ).catch((e) => {
     throw new Error(e);
@@ -26,7 +26,7 @@ export const getDataProduct = async () => {
 export const getUser = async () => {
   const get = await fetch(`https://api.escuelajs.co/api/v1/users?limit=8`, {
     method: "GET",
-    cache:"no-store"
+    // cache:"no-store"
   }).catch((e) => {
     throw new Error(e);
   });
