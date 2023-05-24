@@ -32,18 +32,14 @@ export const uploadProduct = async (product) => {
     body: raw,
     // redirect: "/",
   };
-  try{
-      const get = await fetch(
-        "https://api.escuelajs.co/api/v1/products",
-        requestOptions
-      );
-      if (get.ok) {
-        alert("True!!!");
-      } else {
-        alert("False");
-      }
-  }catch(error){
-    alert(error)
+  try {
+    const get = await fetch(
+      `https://api.escuelajs.co/api/v1/products`,
+      requestOptions
+    );
+    alert(get.ok);
+  } catch (error) {
+    alert(error);
   }
 };
 //
@@ -110,8 +106,8 @@ export default function Upload() {
               formData.append("file", values.file);
               alert(values.file.name);
               const img = await imgPost({ file: formData });
-              values.images = img;
-              const data  = await uploadProduct(values);
+              values.images = [img];
+              const data = await uploadProduct(values);
               setSubmitting(false);
               resetForm();
             }}
