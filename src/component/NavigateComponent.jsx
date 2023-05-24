@@ -1,10 +1,7 @@
 "use client";
-
-import { usePathname } from "next/navigation";
 import React from "react";
 
 export default function NavigateCompunent() {
-  const path = usePathname();
   return (
     <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -53,10 +50,11 @@ export default function NavigateCompunent() {
             </li>
             <li>
               <a
-                href="/admin"
+                aria-disabled
+                href="/product"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Admin
+                Products
               </a>
             </li>
             <li>
@@ -69,11 +67,10 @@ export default function NavigateCompunent() {
             </li>
             <li>
               <a
-                aria-disabled
-                href="#"
+                href="/admin"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Contact
+                Admin
               </a>
             </li>
           </ul>

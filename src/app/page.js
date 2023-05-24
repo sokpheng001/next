@@ -187,6 +187,7 @@ export default async function Home() {
               title={e.title}
               price={e.price}
               id={e.id}
+              categoryID={e.category.id}
               category={e.category.name}
             />
           ))}

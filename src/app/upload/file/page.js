@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Formik, Form } from "formik";
-import { fromJSON } from "postcss";
 import axios from "axios";
-import { VALID_LOADERS } from "next/dist/shared/lib/image-config";
+import {useParams, usePathname, useRouter} from "next/navigation";
+
 
 // file config
 const FILE_SIZE = 1024 * 1024 * 2; // 2MB
@@ -25,7 +25,6 @@ export const uploadProduct = async (product) => {
     categoryId,
     images,
   });
-  alert(raw);
   let requestOptions = {
     method: "POST",
     headers: myHeaders,
@@ -37,7 +36,6 @@ export const uploadProduct = async (product) => {
       `https://api.escuelajs.co/api/v1/products`,
       requestOptions
     );
-    alert(get.ok);
   } catch (error) {
     alert(error);
   }
@@ -80,6 +78,9 @@ const imgPost = async (values) => {
 };
 
 export default function Upload() {
+  const router = useRouter();
+  const [detail, setDetail] = useState(false);
+  const usePathName = usePathname();
   return (
     <div className="bg-base-200">
       <div className="text-center">
@@ -104,12 +105,13 @@ export default function Upload() {
             onSubmit={async (values, { setSubmitting, resetForm }) => {
               const formData = new FormData();
               formData.append("file", values.file);
-              alert(values.file.name);
               const img = await imgPost({ file: formData });
               values.images = [img];
-              const data = await uploadProduct(values);
+              await uploadProduct(values);
+              setDetail(true);
               setSubmitting(false);
-              resetForm();
+              //route to detailed page
+              alert(usePathName)
             }}
           >
             {({ isSubmitting, setFieldValue }) => (

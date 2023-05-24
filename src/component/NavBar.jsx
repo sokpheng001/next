@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 
 export default function NavBar() {
-  const pathName = usePathname();
-  if(pathName.includes('/upload'))
+  // const pathName = usePathname();
+  // if(pathName.includes('/upload/file'))
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">

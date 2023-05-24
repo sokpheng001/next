@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Card({ img, title, price, id, category }) {
+export default function Card({ img, title, price, id, category ,categoryID}) {
   return (
     <div className="w-80 bg-white border border-gray-200  rounded-lg shadow-lg dark:bg-slate-600 dark:border-gray-700">
       <a href={`/product/${id}`}>
