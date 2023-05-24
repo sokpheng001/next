@@ -29,6 +29,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <link rel="shortcut icon" href="" sizes="any" />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+          rel="stylesheet"
+        />
       </Head>
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>
@@ -38,7 +42,9 @@ export default function RootLayout({ children }) {
           <FooterComponent />
         </Suspense>
       </body>
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></Script>
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
+      ></Script>
     </html>
   );
 }

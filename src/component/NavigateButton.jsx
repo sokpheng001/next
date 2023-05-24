@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function NavigateButton() {
     const path = usePathname();
-    if(path.includes('upload')) return null;
+    if(path.includes('/upload/file')) return null
   return (
     <div data-dial-init class="fixed right-6 bottom-6 group">
       <button

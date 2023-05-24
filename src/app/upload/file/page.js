@@ -1,8 +1,10 @@
 "use client";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Formik, Form } from "formik";
-
+import { fromJSON } from "postcss";
+import axios from "axios";
+import { VALID_LOADERS } from "next/dist/shared/lib/image-config";
 
 // file config
 const FILE_SIZE = 1024 * 1024 * 2; // 2MB
@@ -12,12 +14,10 @@ const SUPPORTED_FORMATS = [
   "image/png",
   "application/pdf",
 ];
-
-export const uploadFile = async (product) => {
+export const uploadProduct = async (product) => {
   const { title, price, description, categoryId, images } = product;
   let myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
   let raw = JSON.stringify({
     title,
     price,
@@ -25,24 +25,34 @@ export const uploadFile = async (product) => {
     categoryId,
     images,
   });
-
+  alert(raw);
   let requestOptions = {
     method: "POST",
     headers: myHeaders,
     body: raw,
-    redirect: "/",
+    // redirect: "/",
   };
-
-  const get = await fetch("https://api.escuelajs.co/api/v1/products", requestOptions);
-  const data = get.json();
+  try{
+      const get = await fetch(
+        "https://api.escuelajs.co/api/v1/products",
+        requestOptions
+      );
+      if (get.ok) {
+        alert("True!!!");
+      } else {
+        alert("False");
+      }
+  }catch(error){
+    alert(error)
+  }
 };
-
+//
 export const schemaValidator = Yup.object().shape({
   title: Yup.string().required("Title is required."),
   price: Yup.number().required("Price is required").positive(),
   description: Yup.string().required("Desciption is required"),
   categoryId: Yup.number().required("CategoryID is required").positive(),
-  images: Yup.mixed()
+  file: Yup.mixed()
     .test("fileSize", "File too large", (value) => {
       console.log(value.size);
       if (!value) {
@@ -58,6 +68,20 @@ export const schemaValidator = Yup.object().shape({
     })
     .required("Image is required"),
 });
+//img post
+const imgPost = async (values) => {
+  try {
+    const respone = await axios.post(
+      "https://api.escuelajs.co/api/v1/files/upload",
+      values.file
+    );
+    if (respone) {
+      return respone?.data?.location;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export default function Upload() {
   return (
@@ -77,12 +101,19 @@ export default function Upload() {
               price: "",
               description: "",
               categoryId: "",
-              images: undefined,
+              images: [""],
+              file: undefined,
             }}
             validationSchema={schemaValidator}
-            onSubmit={(values, setSubmitting) => {
-              alert(JSON.stringify(values));
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              const formData = new FormData();
+              formData.append("file", values.file);
+              alert(values.file.name);
+              const img = await imgPost({ file: formData });
+              values.images = img;
+              const data  = await uploadProduct(values);
               setSubmitting(false);
+              resetForm();
             }}
           >
             {({ isSubmitting, setFieldValue }) => (
@@ -170,14 +201,14 @@ export default function Upload() {
                         Product Picture
                       </label>
                       <Field
-                        name="images"
+                        name="file"
                         className="-mt-2 file-input w-full max-w-xs"
                         type="file"
                         component={FileInput}
                         setFieldValue={setFieldValue}
                       />
                       <ErrorMessage
-                        name="images"
+                        name="file"
                         className="text-red-700"
                         component={"div"}
                       />
@@ -222,7 +253,13 @@ export default function Upload() {
 }
 // create file input filed
 
-export const FileInput = ({ field, form, setFieldValue, isSubmitting,...props }) => {
+export const FileInput = ({
+  field,
+  form,
+  setFieldValue,
+  isSubmitting,
+  ...props
+}) => {
   const [imagePreview, setImagePreview] = useState(null);
   // this function is used handle the file selection
   const handleChange = (event) => {
@@ -234,11 +271,12 @@ export const FileInput = ({ field, form, setFieldValue, isSubmitting,...props })
     // to display preview of the selected file
     setImagePreview(URL.createObjectURL(file));
   };
-    useEffect(() => {
-      if (isSubmitting) {
-        setImagePreview(null);
-      }
-    }, [isSubmitting]);
+  const [type, setType] = useState(null);
+  useEffect(() => {
+    if (isSubmitting) {
+      setImagePreview(null);
+    }
+  }, [isSubmitting]);
   return (
     <>
       <input

@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image';
-
 
 export async function generateMetadata({ params }) {
   const get = await fetch(
