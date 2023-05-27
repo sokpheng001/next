@@ -1,18 +1,20 @@
 "use client";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function NavigateCompunent() {
+  const pathName = usePathname();
   return (
     <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img
-            src="https://th.bing.com/th/id/R.52fd91803ce691ae511164e907fbda04?rik=hWu9%2f5rbFxKOhg&pid=ImgRaw&r=0"
+            src="https://thumbs.dreamstime.com/z/food-can-packaging-vector-illustration-set-cartoon-flat-canned-product-collection-fruit-jam-jar-tin-preserves-isolated-juice-192210260.jpg"
             className="h-8 mr-3 rounded-full"
-            alt="SoPi Logo"
+            alt="Product store"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Hey!, SoPi
+            IsTOCK
           </span>
         </a>
         <button
@@ -42,7 +44,11 @@ export default function NavigateCompunent() {
             <li>
               <a
                 href="/"
-                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                className={
+                  pathName === "/"
+                    ? "block py-2 pl-3 pr-4 text-white bg-yellow-400 rounded md:bg-transparent md:text-yellow-400 md:p-0 md:dark:text-yellow-400 dark:bg-yellow-400 md:dark:bg-transparent"
+                    : "block py-2 pl-3 pr-4 text-white bg-white-700 rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-white-600 md:dark:bg-transparent"
+                }
                 aria-current="page"
               >
                 Home
@@ -52,7 +58,11 @@ export default function NavigateCompunent() {
               <a
                 aria-disabled
                 href="/product"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={
+                  pathName === "/product"
+                    ? "block py-2 pl-3 pr-4 text-white bg-yellow-400 rounded md:bg-transparent md:text-yellow-400 md:p-0 md:dark:text-yellow-400 dark:bg-yellow-400 md:dark:bg-transparent"
+                    : "block py-2 pl-3 pr-4 text-white bg-white-700 rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-white-600 md:dark:bg-transparent"
+                }
               >
                 Products
               </a>
@@ -60,7 +70,11 @@ export default function NavigateCompunent() {
             <li>
               <a
                 href="/upload/file"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={
+                  pathName === "/upload/file"
+                    ? "block py-2 pl-3 pr-4 text-white bg-yellow-400 rounded md:bg-transparent md:text-yellow-400 md:p-0 md:dark:text-yellow-400 dark:bg-yellow-400 md:dark:bg-transparent"
+                    : "block py-2 pl-3 pr-4 text-white bg-white-700 rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-white-600 md:dark:bg-transparent"
+                }
               >
                 Upload
               </a>
@@ -68,7 +82,11 @@ export default function NavigateCompunent() {
             <li>
               <a
                 href="/admin"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={
+                  pathName === "/admin"
+                    ? "block py-2 pl-3 pr-4 text-white bg-yellow-400 rounded md:bg-transparent md:text-yellow-400 md:p-0 md:dark:text-yellow-400 dark:bg-yellow-400 md:dark:bg-transparent"
+                    : "block py-2 pl-3 pr-4 text-white bg-white-700 rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-white-600 md:dark:bg-transparent"
+                }
               >
                 Admin
               </a>

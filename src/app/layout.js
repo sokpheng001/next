@@ -1,18 +1,18 @@
 import NavigateCompunent from "@/component/NavigateComponent";
 import "./globals.css";
 
-import Head from "next/head";
 import {Inter } from "next/font/google";
 import NavigateButton from "@/component/NavigateButton";
 import FooterComponent from "@/component/FooterComponent";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Script from "next/script";
+import { Carousel } from "./page";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Hey!, SoPi - Home Page",
+  title:"IsTock - Home Page",
   description: "Shopping",
   keywords: "SoPi Shopping",
   author: "Sokpheng",
@@ -27,13 +27,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="shortcut icon" href="" sizes="any" />
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
-          rel="stylesheet"
-        />
-      </Head>
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>
           <NavigateCompunent />
@@ -42,9 +35,7 @@ export default function RootLayout({ children }) {
           <FooterComponent />
         </Suspense>
       </body>
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
-      ></Script>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></Script>
     </html>
   );
 }

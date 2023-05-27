@@ -1,6 +1,7 @@
 import Avatar from "@/component/UserAvatar";
 import Card from "@/component/Card";
 import CategoryAvatar from "@/component/CategoryAvatar";
+import Carousel from "@/component/CarouseComponent";
 
 // get product from api
 export const getDataProduct = async () => {
@@ -48,6 +49,7 @@ export default async function Home() {
   return (
     <div className="flex justify-center bg-slate-700">
       <main className="my-5">
+        {/* Carousel */}
         {/* avatar user */}
         <p className="mb-3 text-lg text-gray-900 dark:text-white font-semibold">
           Top Customers
@@ -74,7 +76,6 @@ export default async function Home() {
             <a className="tab tab-xs tab-lifted tab-active">See More...</a>
           </div>
         </label>
-
         {/* Put this part before </body> tag */}
         <input type="checkbox" id="my-modal-3" className="modal-toggle" />
         <div className="modal">
@@ -241,26 +242,26 @@ export function Banner() {
   );
 }
 
-//carousel function
-export async function Carousel() {
-  const photo = await getDataProduct();
-  return (
-    <div>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          {photo.map((e, index) =>
-            index < 1 ? (
-              <div key={index}>
-                <img
-                  src={e.category.image}
-                  className="w-full"
-                  alt="image category"
-                />
-              </div>
-            ) : null
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
+// //carousel function
+// export async function Carousel() {
+//   const photo = await getDataProduct();
+//   return (
+//     <div>
+//       <div className="carousel w-full">
+//         <div id="slide1" className="carousel-item relative w-full">
+//           {photo.map((e, index) =>
+//             index < 1 ? (
+//               <div key={index}>
+//                 <img
+//                   src={e.category.image}
+//                   className="w-full"
+//                   alt="image category"
+//                 />
+//               </div>
+//             ) : null
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

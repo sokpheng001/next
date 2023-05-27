@@ -1,9 +1,14 @@
+'use client'
+
 import React from "react";
-import Image from "next/image";
+
+const al = ()=>{
+  alert("This point is over the development");
+}
 
 export default function Categoryimg({ name, img, id }) {
   return (
-    <a href={`/category/${id}`} className="" title={name}>
+    <a href={``}  onClick={al} className="" title={name}>
       <img
         class="w-16 h-16 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
         src={
