@@ -29,25 +29,6 @@ export const metadata = {
   robots: "index",
   canonical: "google.com",
 };
-// 
-// export const metadata = {
-//   title: "ISTAD - Home",
-//   description: "This is my app",
-//   images: "/images/alien.png",
-
-//   openGraph: {
-//     title: "ISTAD-HOME",
-//     description: "This is my app",
-//     url: "",
-//     images: "/images/alien.png",
-//   },
-//   twitter: {
-//     title: "My App",
-//     description: "This is my app",
-//     url: "https://myapp.com",
-//     image: "https://myapp.com/og.png",
-//   },
-// };
 
 export default function RootLayout({ children }) {
   return (
