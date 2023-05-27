@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 
 // file config
-const FILE_SIZE = 1024 * 1024 * 2; // 2MB
+const FILE_SIZE = 1024 * 1024 * 3; // 2MB
 const SUPPORTED_FORMATS = [
   "image/jpg",
   "image/jpeg",

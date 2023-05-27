@@ -15,13 +15,13 @@ export const metadata = {
   openGraph: {
     description: "Welcome to IsTock",
     url: "https://istad.co/",
-    images: "https://api.escuelajs.co/api/v1/files/0ea6.png",
+    images: "https://api.escuelajs.co/api/v1/files/a629.png",
   },
   twitter: {
     title: "IsTock Product",
     description: "Welcome to IsTock",
     url: "https://istad.co/",
-    images: "https://api.escuelajs.co/api/v1/files/0ea6.png",
+    images: "https://api.escuelajs.co/api/v1/files/a629.png",
   },
   description: "Shopping",
   keywords: "Shopping",
