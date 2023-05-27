@@ -4,7 +4,7 @@ import React from 'react'
 import { usePathname } from 'next/navigation';
 
 export default function FooterComponent() {
-  if(usePathname().includes("/admin")) return null
+  if(usePathname().includes("/admin")) return null;
   return (
     <footer class="bg-white dark:bg-gray-800">
       <div class="mx-auto w-full max-w-screen-xl">

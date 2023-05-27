@@ -3,7 +3,7 @@ import Card from '@/component/Card';
 
 
 export const metadata = {
-  title:"IsTock - Product",
+  title:"Product - IsTock",
   description:"List of all products",
   author:"ISTAD",
   keywords:"Production",

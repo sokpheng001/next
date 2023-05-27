@@ -11,17 +11,17 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "IsTock - Home Page",
+  title: "Home page - IsTock",
   openGraph: {
     description: "Welcome to IsTock",
     url: "https://istad.co/",
-    images: "https://api.escuelajs.co/api/v1/files/1f95.png",
+    images: "https://api.escuelajs.co/api/v1/files/0ea6.png",
   },
   twitter: {
     title: "IsTock Product",
     description: "Welcome to IsTock",
     url: "https://istad.co/",
-    images: "https://api.escuelajs.co/api/v1/files/1f95.png",
+    images: "https://api.escuelajs.co/api/v1/files/0ea6.png",
   },
   description: "Shopping",
   keywords: "Shopping",

@@ -10,7 +10,9 @@ export default function NavigateCompunent() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img
-            src={""}
+            src={
+              "https://th.bing.com/th/id/R.7b54e87f9720a96a581a911855cc885b?rik=h210O9oTBBXW4A&riu=http%3a%2f%2fwww.ukas.co.uk%2fwp-content%2fuploads%2f2015%2f06%2fProducts.jpg&ehk=YP3dWBn6j7rptdUjf7ULNf9JRLftWhccCEISE3V1uS0%3d&risl=&pid=ImgRaw&r=0"
+            }
             className="h-8 mr-3 object-contain  rounded-full"
             alt="Product store"
           />

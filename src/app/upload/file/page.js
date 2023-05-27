@@ -84,9 +84,10 @@ export default function Upload() {
   const[spinner,setSpinner] = useState(false)
 ;  return (
     <div className="bg-base-200">
-      <title>IsTock - Upload</title>
+      <title>Upload - IsTock</title>
       <meta title="IsTOCK - Upload" content="Upload file"></meta>
       <div className="text-center">
+        <br></br>
         <h1 className="text-5xl font-bold">Upload Product Now!</h1>
         <p className="py-6">
           Product stock by ISTAD first generation - scholarship student.

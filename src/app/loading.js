@@ -8,7 +8,7 @@ export default async function Loading() {
   return (
     <div className="flex justify-center bg-slate-700">
       <main className="my-5">
-        {/* avatar user */}
+        {/* user avatar*/}
         <div class="h-2 w-16 bg-gray-200 rounded-full dark:bg-gray-400 mb-2.5"></div>
         <div className="flex sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4">
           {array.map((u,key) =>
@@ -20,7 +20,6 @@ export default async function Loading() {
           )}
         </div>
         {/* category user */}
-        {/* avatar user */}
         <div class="mt-3 h-2 w-24 bg-gray-200 rounded-full dark:bg-gray-400 mb-2.5"></div>
         <div className="flex sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4">
           {array.map((u, index) =>
