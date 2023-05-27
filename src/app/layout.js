@@ -14,15 +14,14 @@ export const metadata = {
   title: "IsTock - Home Page",
   openGraph: {
     description: "This is my app",
-    url: "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
-    image:
-      "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
+    url: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
+    image: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
   },
   twitter: {
     title: "My App",
     description: "This is my app",
-    url: "https://myapp.com",
-    image: "https://myapp.com/og.png",
+    url: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
+    image: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
   },
   description: "Shopping",
   keywords: "Shopping",
