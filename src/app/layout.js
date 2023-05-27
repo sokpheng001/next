@@ -11,10 +11,10 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  title: "IsTock - Home Page",
   openGraph: {
-    title: "IsTock - Home Page",
     description: "This is my app",
-    url: "",
+    url: "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
     image:
       "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
   },
@@ -25,7 +25,7 @@ export const metadata = {
     image: "https://myapp.com/og.png",
   },
   description: "Shopping",
-  keywords: "SoPi Shopping",
+  keywords: "Shopping",
   author: "Sokpheng",
   robots: "index",
   canonical: "google.com",
