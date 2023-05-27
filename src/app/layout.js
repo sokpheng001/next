@@ -13,15 +13,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "IsTock - Home Page",
   openGraph: {
-    description: "This is my app",
-    url: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
-    image: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
+    description: "Welcome to IsTock",
+    url: "https://istad.co/",
+    images: "https://api.escuelajs.co/api/v1/files/1f95.png",
   },
   twitter: {
-    title: "My App",
-    description: "This is my app",
-    url: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
-    image: "https://api.escuelajs.co/api/v1/files/e5d10.jpg",
+    title: "IsTock Product",
+    description: "Welcome to IsTock",
+    url: "https://istad.co/",
+    images: "https://api.escuelajs.co/api/v1/files/1f95.png",
   },
   description: "Shopping",
   keywords: "Shopping",

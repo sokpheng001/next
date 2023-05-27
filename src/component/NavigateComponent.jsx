@@ -10,7 +10,7 @@ export default function NavigateCompunent() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img
-            src={"https://api.escuelajs.co/api/v1/files/1f95.png"}
+            src={""}
             className="h-8 mr-3 object-contain  rounded-full"
             alt="Product store"
           />
