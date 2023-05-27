@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { images } from "../../next.config";
 
 export default function NavigateCompunent() {
   const pathName = usePathname();
@@ -9,8 +10,8 @@ export default function NavigateCompunent() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img
-            src="https://thumbs.dreamstime.com/z/food-can-packaging-vector-illustration-set-cartoon-flat-canned-product-collection-fruit-jam-jar-tin-preserves-isolated-juice-192210260.jpg"
-            className="h-8 mr-3 rounded-full"
+            src={"https://api.escuelajs.co/api/v1/files/e5d10.jpg"}
+            className="h-8 mr-3 object-contain  rounded-md"
             alt="Product store"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">

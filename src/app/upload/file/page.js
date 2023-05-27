@@ -115,7 +115,7 @@ export default function Upload() {
               setSubmitting(false);
               if (upload) {
                 alert("You hace been created your product.");
-                router.push(`/product/detailed/${values.title}`);
+                router.push(`/product/detailed/${values.images}`);
               }
               resetForm();
               //route to detailed page
