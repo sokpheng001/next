@@ -7,22 +7,48 @@ import FooterComponent from "@/component/FooterComponent";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Script from "next/script";
-import { Carousel } from "./page";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title:"IsTock - Home Page",
+  openGraph: {
+    title: "IsTock - Home Page",
+    description: "This is my app",
+    url: "",
+    image:
+      "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
+  },
+  twitter: {
+    title: "My App",
+    description: "This is my app",
+    url: "https://myapp.com",
+    image: "https://myapp.com/og.png",
+  },
   description: "Shopping",
   keywords: "SoPi Shopping",
   author: "Sokpheng",
   robots: "index",
   canonical: "google.com",
-  openGraph: {
-    image:
-      "https://th.bing.com/th/id/R.5ee1fa25b0bf51a1163197eb2b9319ff?rik=QCJQB3HvmcE1aw&pid=ImgRaw&r=0",
-  },
 };
+// 
+// export const metadata = {
+//   title: "ISTAD - Home",
+//   description: "This is my app",
+//   images: "/images/alien.png",
+
+//   openGraph: {
+//     title: "ISTAD-HOME",
+//     description: "This is my app",
+//     url: "",
+//     images: "/images/alien.png",
+//   },
+//   twitter: {
+//     title: "My App",
+//     description: "This is my app",
+//     url: "https://myapp.com",
+//     image: "https://myapp.com/og.png",
+//   },
+// };
 
 export default function RootLayout({ children }) {
   return (
